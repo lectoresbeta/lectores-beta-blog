@@ -76,7 +76,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const token = 'b5c7da6970ec2920f76bb27dd5c99f24774a49bc2ff5af35c70ea53b8ca943050c0c8bea8964190029506ddf6658013943c97e74a612a489a01eb92b06cd5a9829d5d626db2773bde474fa5387de90ad2c165a97083f720ca9b9ab963abe9ff4248bccebd5fa9b3025005567efab7bb1e9f10e138db8777b633889ad54d0fa7e'; // Reemplaza con tu Bearer token real
+      const token = import.meta.env.VITE_API_TOKEN;
 
       try {
         const response = await fetch('https://api.lectoresbeta.com/api/articles?populate[0]=author.avatar&populate[1]=categories&populate[2]=cover&pagination[pageSize]=3&sort[1]=publishedAt:desc', {
