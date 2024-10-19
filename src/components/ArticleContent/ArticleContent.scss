@@ -40,6 +40,7 @@
   }
   img {
     max-width: 100%;
+    border-radius: 8px;
   }
 
   &__Cover {
@@ -53,9 +54,6 @@
 @media only screen and (max-width: 600px) {
   .c__ArticleContent {
     padding: 20px;
-    img {
-      border-radius: 8px;
-    }
     p {
       font-size: 16px;
     }

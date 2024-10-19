@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import Hero from '../components/Hero/Hero';
 import '../styles/SectionWhite.scss';
 import '../styles/SectionDark.scss';
@@ -9,6 +9,7 @@ import ArticleCard from '../components/ArticleCard/ArticleCard';
 import Quote from '../components/Quote/Quote';
 import Prefooter from '../components/Prefooter/Prefooter';
 import { Carousel } from 'antd';
+import { ArrowRightOutlined } from '@ant-design/icons';
 
 interface Article {
   id: number;
@@ -201,13 +202,16 @@ const HomePage = () => {
               ))}
             </div>
           )}
+          <div className="c__SectionWhite__ExploreResources">
+            <Link to="/recursos">Explorar recursos <ArrowRightOutlined /></Link>
+          </div>
         </div>
       </section>
 
-      <section className="c__SectionDark">
+      <section className="c__SectionDark TextRight">
         <div>
           <img src={mockupImage2} alt="Mockup" />
-          <div className='c__SectionDark__TextRight'>
+          <div>
             <h3>Muéstrate al mundo con tu perfil de autor</h3>
             <p>
               Organiza tus escritos en tu espacio personalizado. Comparte tu biografía, obras anteriores
@@ -218,7 +222,7 @@ const HomePage = () => {
       </section>
 
       <section className="c__SectionWhite" ref={testimonialsSectionRef}>
-        <div>
+        <div className="c__SectionWhite__Testimonial">
           <h2>Dicen de nosotros</h2>
             <Carousel autoplay arrows autoplaySpeed={10000} dots>
               {quotes.map((quote, index) => (

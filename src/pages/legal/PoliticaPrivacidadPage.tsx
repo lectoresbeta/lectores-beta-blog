@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/LegalPage.scss';
 import { Link } from 'react-router-dom';
+import Prefooter from '../../components/Prefooter/Prefooter';
 
 const PoliticaPrivacidadPage = () => {  
   const [email, setEmail] = useState('');
@@ -12,6 +13,7 @@ const PoliticaPrivacidadPage = () => {
   }, []);
 
   return (
+    <>
     <div className="c__LegalPage">
       <h1>Política de Privacidad</h1>
 
@@ -87,6 +89,8 @@ const PoliticaPrivacidadPage = () => {
           Si tienes alguna duda o consulta sobre esta Política de Privacidad, no dudes en contactarnos en: <a href={`mailto:${email}`}>{email}</a>.
       </p>
     </div>
+    <Prefooter />
+    </>
 );
 };
 

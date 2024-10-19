@@ -11,10 +11,10 @@ interface AuthorProps {
 const Author: React.FC<AuthorProps> = ({ avatarUrl, name, link }) => {
 
   return (
-    <a href={link} target='_blank' className="c__Author">
+    <div className="c__Author">
       <AuthorAvatar imageUrl={avatarUrl} />
       <span>{name}</span>
-    </a>
+    </div>
   );
 };
 

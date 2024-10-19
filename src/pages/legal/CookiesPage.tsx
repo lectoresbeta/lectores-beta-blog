@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/LegalPage.scss';
+import Prefooter from '../../components/Prefooter/Prefooter';
 
 const CookiesPage = () => {  
   const [email, setEmail] = useState('');
@@ -11,6 +12,7 @@ const CookiesPage = () => {
   }, []);
 
   return (
+    <>
     <div className="c__LegalPage">
       <h1>Política de Cookies</h1>
       <p>En <strong>Lectores Beta</strong>, utilizamos cookies para mejorar tu experiencia en nuestra web y analizar el tráfico de la misma. Las cookies que usamos son <strong>exclusivamente con fines estadísticos</strong> a través de Google Analytics. A continuación, te explicamos qué son las cookies, cómo las utilizamos y cómo puedes gestionarlas.</p>
@@ -44,6 +46,8 @@ const CookiesPage = () => {
 
       <p>Si tienes alguna duda sobre nuestra política de cookies, puedes contactarnos en <a href={`mailto:${email}`}>{email}</a>.</p>
     </div>
+    <Prefooter />
+    </>
 );
 };
 

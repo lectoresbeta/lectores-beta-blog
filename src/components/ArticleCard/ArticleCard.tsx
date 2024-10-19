@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRightOutlined } from '@ant-design/icons';
 import AuthorAvatar from '../AuthorAvatar/AuthorAvatar.tsx';
 import './ArticleCard.scss';
 import Author from '../Author/Author.tsx';
@@ -25,7 +24,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, tags, slug, imageU
   });
 
   return (
-    <div className={`c__ArticleCard ${className}`}>
+    <a href={`article/${id}`} className={`c__ArticleCard ${className}`}>
       <img src={imageUrl} alt={title} />
       <div className="c__ArticleCard__Tags">
         {tags.map((tag, index) => (
@@ -33,7 +32,6 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, tags, slug, imageU
         ))}
       </div>
       <h1>{title}</h1>
-      <a href={`article/${id}`}>Leer artículo <ArrowRightOutlined /></a>
       <hr/>
       <footer>
         <Author avatarUrl={authorAvatarUrl} name={authorName} link={authorLink} />
@@ -41,7 +39,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, tags, slug, imageU
           {formattedDate}
         </span>
       </footer>
-    </div>
+    </a>
   );
 };
 

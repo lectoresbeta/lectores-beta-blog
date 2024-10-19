@@ -28,11 +28,11 @@
     max-width: 450px;
   }
   img {
-    max-height: 600px;
+    max-height: 450px;
     margin-top: 30px;
   }
 
-  &__TextRight {
+  &.TextRight {
     padding-left: 120px;
   }
 }
@@ -40,18 +40,22 @@
 @media only screen and (max-width: 600px) {
   .c__SectionDark {
     & > div {
-      padding: 60px 20px;
+      padding: 60px 20px 0;
       flex-direction: column;
       img {
         max-width: 100%;
+        margin-bottom: 0px;
       }
     }
     p {
       font-size: 18px;
     }
 
-    &__TextRight {
+    &.TextRight {
       padding-left: 0;
+      & > div {
+        flex-direction: column-reverse;
+      }
     }
   }
 }

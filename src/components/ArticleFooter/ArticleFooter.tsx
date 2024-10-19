@@ -1,6 +1,7 @@
 import React from 'react';
 import "./ArticleFooter.scss";
 import AuthorAvatar from '../AuthorAvatar/AuthorAvatar';
+import { IconLinkExternal01 } from 'untitled-ui-icons';
 
 
 interface Article {
@@ -51,7 +52,7 @@ const ArticleFooter: React.FC<ArticleContentProps> = ({ article }) => {
           {article.author.bio}
         </p>
         <div className="c__ArticleFooter__Visit">
-          <a className="c__Button" href={article.author.link} target='_blank'>Visitar web</a>
+          <a href={article.author.link} target='_blank'>Visitar web <IconLinkExternal01 /></a>
         </div>
       </div>
     </div>
