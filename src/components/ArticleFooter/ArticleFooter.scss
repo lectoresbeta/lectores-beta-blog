@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.c__ArticleFooter {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 45px 0;
+
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-between;
+
+  p {
+    color: $secondary-light;
+    line-height: 1.5;
+  }
+
+  &__Visit {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

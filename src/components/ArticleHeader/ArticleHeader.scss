@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.c__ArticleHeader {
+  padding: 60px 0;
+  h1 {
+    font-size: 48px;
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+  }
+  &__Data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    margin-top: 45px;
+    border-top: solid 1px $light;
+    border-bottom: solid 1px $light;
+    padding: 20px 0 20px;
+
+    color: $gray;
+
+    &__PublishedAt {
+      flex-grow: 1;
+    }
+
+    &__Categories {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      justify-content: flex-end;
+    }
+  }
+}

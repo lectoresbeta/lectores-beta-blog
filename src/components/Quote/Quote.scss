@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.c__Quote {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__Mark {
+    font-size: 120px;
+    font-weight: 700;
+    color: $primary-color;
+    font-family: 'Roboto Serif';
+  }
+
+  &__Content {
+    font-style: italic;
+  }
+
+  &__AuthorName {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $black;
+    margin: 30px 0 5px;
+  }
+
+  &__AuthorRole {
+    font-size: 16px;
+    font-weight: 400;
+    color: $gray;
+  }
+
+  hr {
+    border: 0;
+    border-top: 2px solid $extraLight;
+    width: 32px;
+  }
+}

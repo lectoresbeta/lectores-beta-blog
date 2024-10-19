@@ -1,0 +1,9 @@
+.c__ArticlesGrid {
+  max-width: 1280px;
+  margin: 30px auto 90px;
+  & > div {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
+  }
+}

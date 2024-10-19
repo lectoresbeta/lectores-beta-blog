@@ -1,0 +1,50 @@
+@import '../../styles/variables';
+
+.c__ArticleContent {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: $secondary-light;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+
+  border-bottom: solid 1px $light;
+
+  h1 {
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 45px;
+  }
+  h2 {
+    font-family: Roboto, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  p {
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  blockquote {
+    border-left: solid 4px $primary-color;
+    padding: 4px 0 4px 12px;
+    p {
+      margin-bottom: 0;
+      font-style: italic;
+    }
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  img {
+    max-width: 100%;
+  }
+
+  &__Cover {
+    object-fit: cover;
+    width: 100%;
+    max-height: 600px;
+  }
+}
