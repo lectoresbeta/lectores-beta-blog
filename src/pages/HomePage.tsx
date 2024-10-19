@@ -8,6 +8,7 @@ import mockupImage2 from '../assets/app-mockup2.png';
 import ArticleCard from '../components/ArticleCard/ArticleCard';
 import Quote from '../components/Quote/Quote';
 import Prefooter from '../components/Prefooter/Prefooter';
+import { Carousel } from 'antd';
 
 interface Article {
   id: number;
@@ -27,16 +28,40 @@ interface Article {
   author: {
     name: string;
     avatarUrl: string;
+    link: string;
   },
   categories: string[];
   publishedAt: string;
 }
 
-const quote = {
-  content: "Hay muchas personas que escriben como hobby, pero no se atreven a compartir sus relatos. En Lectores Beta recibirás feedback constructivo de lectores apasionados por la lectura y la escritura. La práctica hace que mejores, pero si tienes a alguien que te indica cuáles son tus carencias, puedes mejorar enormemente.",
-  authorName: "Pirra Smith",
-  authorRole: "Correctora profesional",
-};
+interface quote {
+  content: string;
+  authorName: string;
+  authorRole: string;
+}
+
+const quotes:quote[] = [
+  {
+    content: "Hay muchas personas que escriben como hobby, pero no se atreven a compartir sus relatos. En Lectores Beta recibirás feedback constructivo de lectores apasionados por la lectura y la escritura. La práctica hace que mejores, pero si tienes a alguien que te indica cuáles son tus carencias, puedes mejorar enormemente.",
+    authorName: "Pirra Smith",
+    authorRole: "Correctora profesional",
+  },
+  {
+    content: "Me resulta interesante ya solo por la idea base de poner en contacto a gente dispuesta a leer y comentar con gente que tiene cosas escritas que necesitan valoración.",
+    authorName: "Susanna",
+    authorRole: "Escritora",
+  },
+  {
+    content: "Contar con lectores beta es siempre una ayuda inestimable para el escritor. Son un detector de defectos, puntos flacos, clichés o aspectos mal resueltos en tu obra. Y además te permiten hacerte una idea de cuál va a ser la acogida de los lectores. ¿Quién da más?",
+    authorName: "Sinjania",
+    authorRole: "Formación para escritores",
+  },
+  {
+    content: "Dar con lectores beta que entiendan cómo funciona una historia y puedan aportar críticas constructivas a tu manuscrito no es sencillo. Por suerte, esta página llega para convertirse en el punto de encuentro perfecto para todos aquellos que queremos seguir mejorando como escritores.",
+    authorName: "Literautas",
+    authorRole: "Blog sobre narrativa",
+  },
+];
 
 const HomePage = () => {  
   const { howItWorksSectionRef, testimonialsSectionRef, resourcesSectionRef, prefooterRef } = useOutletContext<{
@@ -82,6 +107,7 @@ const HomePage = () => {
           author: {
             name: item.author?.name || 'Autor desconocido',
             avatarUrl: item.author?.avatar?.formats?.thumbnail?.url || 'default-avatar.jpg',
+            link: item.author.link,
           },
           categories: item.categories ? item.categories.map((category: any) => category.name) : [],
           publishedAt: item.publishedAt,
@@ -169,6 +195,7 @@ const HomePage = () => {
                   imageUrl={article.cover.formats.small.url}
                   authorAvatarUrl={article.author.avatarUrl}
                   authorName={article.author.name}
+                  authorLink={article.author.link}
                   publishedAt={article.publishedAt}
                 />
               ))}
@@ -180,7 +207,7 @@ const HomePage = () => {
       <section className="c__SectionDark">
         <div>
           <img src={mockupImage2} alt="Mockup" />
-          <div className='pl-120'>
+          <div className='c__SectionDark__TextRight'>
             <h3>Muéstrate al mundo con tu perfil de autor</h3>
             <p>
               Organiza tus escritos en tu espacio personalizado. Comparte tu biografía, obras anteriores
@@ -193,11 +220,16 @@ const HomePage = () => {
       <section className="c__SectionWhite" ref={testimonialsSectionRef}>
         <div>
           <h2>Dicen de nosotros</h2>
-          <Quote
-            content={quote.content}
-            authorName={quote.authorName}
-            authorRole={quote.authorRole}
-          />
+            <Carousel autoplay arrows autoplaySpeed={10000} dots>
+              {quotes.map((quote, index) => (
+              <Quote
+                key={index}
+                content={quote.content}
+                authorName={quote.authorName}
+                authorRole={quote.authorRole} 
+                />
+              ))}
+            </Carousel>
         </div>
       </section>
       

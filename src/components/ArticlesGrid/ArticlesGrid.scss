@@ -7,3 +7,15 @@
     grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .c__ArticlesGrid {
+    padding: 0 20px;
+    margin: 0 auto 60px;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+}

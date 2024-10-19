@@ -4,12 +4,22 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  height: 415px;
 
   &__Mark {
     font-size: 120px;
     font-weight: 700;
     color: $primary-color;
     font-family: 'Roboto Serif';
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 45px;
+    img {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &__Content {
@@ -34,5 +44,11 @@
     border: 0;
     border-top: 2px solid $extraLight;
     width: 32px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .c__Quote {
+    height: 470px;
   }
 }

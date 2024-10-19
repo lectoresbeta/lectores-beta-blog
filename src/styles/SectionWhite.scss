@@ -64,4 +64,72 @@
     line-height: 1.4;
     max-width: 850px;
   }
+  .ant-carousel {
+    width: 800px;
+    max-width: 100%;
+  }
+  .ant-carousel .slick-dots {
+    gap: 2px;
+    padding-top: 30px;
+
+    li {
+      text-align: center;;
+      button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%; // Hacer los puntos redondos
+        background-color: $light; // Color de los puntos inactivos
+      }
+    }
+  }
+  .ant-carousel .slick-dots li.slick-active
+  {
+    width: 16px;
+     button {
+      background-color: $gray;
+      width: 10px;
+     }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .c__SectionWhite {
+    padding: 45px 0;
+    & > div {
+      padding: 20px;
+      ul, ol {
+        flex-direction: column;
+        li {
+          max-width: 100%;
+          h3 {
+            font-size: 24px;
+          }
+        }
+      }
+
+
+      .c__SectionWhite__Articles {
+        flex-direction: column;
+        max-width: 100%;
+
+      }
+      h2, p {
+        max-width: 100%;
+      }
+    }
+    p {
+      font-size: 18px;
+    }
+    .ant-carousel {
+      width: 100%;
+      .slick-dots {
+        flex-direction: row;
+      }
+    }
+    &__Number {
+      font-size: 56px;
+    }
+  }
+
 }

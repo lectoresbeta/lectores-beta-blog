@@ -1,5 +1,6 @@
 import React from 'react';
 import './Quote.scss';
+import quote from '../../assets/quote.svg';
 
 interface QuoteProps {
   content: string;
@@ -11,7 +12,9 @@ interface QuoteProps {
 const Quote: React.FC<QuoteProps> = ({ content, authorName, authorRole }) => {
   return (
     <div className="c__Quote">
-      <span className="c__Quote__Mark">”</span>
+      <span className="c__Quote__Mark">
+        <img src={quote} />
+      </span>
       <p className="c__Quote__Content">{content}</p>
       <hr/>
       <span className="c__Quote__AuthorName">{authorName}</span>

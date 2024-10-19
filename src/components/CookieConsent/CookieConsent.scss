@@ -42,3 +42,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .cookie-consent-banner {
+    h2 {
+      font-size: 24px;
+    }
+  }
+}

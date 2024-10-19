@@ -33,3 +33,17 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .c__ArticleHeader {
+    padding: 45px 20px;
+    h1 {
+      font-size: 24px;
+    }
+    &__Data {
+      &__Categories {
+        display: none;
+      }
+    }
+  }
+}

@@ -29,7 +29,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, tags, slug, imageU
       <img src={imageUrl} alt={title} />
       <div className="c__ArticleCard__Tags">
         {tags.map((tag, index) => (
-          <Tag>{tag}</Tag>
+          <Tag key={index}>{tag}</Tag>
         ))}
       </div>
       <h1>{title}</h1>

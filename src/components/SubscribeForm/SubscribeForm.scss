@@ -26,6 +26,20 @@
   }
 
   &__Terms {
+    span {
+      font-size: 14px;
+    }
+  }
+}
 
+@media only screen and (max-width: 600px) {
+  .c__SubscribeForm {
+    & > div {
+      flex-direction: column;
+      align-items: initial;
+      button {
+        width: 100%;
+      }
+    }
   }
 }

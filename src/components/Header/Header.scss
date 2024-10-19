@@ -64,3 +64,20 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 600px) {
+  .c__Header {
+    & > div {
+      h1 {
+        font-size: 20px;
+      }
+    }
+    &__logo {
+      gap: 20px;
+    }
+    button {
+      display: none;
+    }
+  }
+}

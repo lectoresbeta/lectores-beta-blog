@@ -2,66 +2,138 @@
 
 .c__Hero {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
   background-color: $secondary-color;
   color: $light;
-  padding: 90px 0 30px;
-  h2, h3 {
-    color: #FFFFFF;
-  }
-  h3 {
-    margin: 0;
-  }
-  p.c__Hero__Highlighted {
-    color: $primary-color;
-    font-weight: 600;
-    font-size: 18px;
-  }
-  p {
-    font-size: 24px;
-    font-weight: 300;
-  }
+
   & > div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     max-width: 1124px;
     width: 100%;
     padding: 0 0 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 240px auto 1fr;
+    grid-template-areas: 
+      "title title title image image image"
+      "form form form image image image"
+      "info1 info1 info2 info2 info3 info3";
+  
+    padding: 90px 0 30px;
+    h2, h3 {
+      color: #FFFFFF;
+    }
+    h3 {
+      margin: 0;
+    }
+    p.c__Hero__Highlighted {
+      color: $primary-color;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    & > div {
+      img {
+        max-height: 462px;;
+      }
+    }
+  }
+  
+
+
+  &__threeColumns__Block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 296px;
+
+    svg {
+      width: 36px;
+      height: 36px;
+      color: $primary-color !important;
+      margin-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.4;
+    }
+  }
+
+  &__Title {
+    grid-area: title;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      p {
+        font-size: 24px;
+        font-weight: 300;
+      }
+    }
+  }
+  &__Image {
+    grid-area: image;
+  }
+  &__Form {
+    grid-area: form;
+    
     & > div {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
-    img {
-      max-height: 462px;;
+  }
+  &__Info1 {
+    grid-area: info1;
+  }
+  &__Info2 {
+    grid-area: info2;
+  }
+  &__Info3 {
+    grid-area: info3;
+  }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .c__Hero {
+  
+    & > div {
+      padding: 60px 0 30px;
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto auto auto auto auto;
+      grid-template-areas: 
+        "title"
+        "image"
+        "form"
+        "info1"
+        "info2"
+        "info3";
+
+      & > div {
+        padding: 20px;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__Form {
+      padding-bottom: 45px;
+    }
+
+    .c__Hero__threeColumns__Block {
+      max-width: 100%;
+      border-top: solid 1px $secondary-light;
     }
   }
 
-  &__threeColumns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    &__Block {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 296px;
-      .anticon svg {
-        width: 36px;
-        height: 36px;
-        color: $primary-color;
-        margin-bottom: 6px;
-      }
-      p {
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1.4;
-      }
-    }
-
-  }
 }
