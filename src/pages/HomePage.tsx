@@ -77,6 +77,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       const token = import.meta.env.VITE_API_TOKEN;
+      console.log(token);
 
       try {
         const response = await fetch('https://api.lectoresbeta.com/api/articles?populate[0]=author.avatar&populate[1]=categories&populate[2]=cover&pagination[pageSize]=3&sort[1]=publishedAt:desc', {
