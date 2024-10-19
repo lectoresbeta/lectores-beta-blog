@@ -4,5 +4,13 @@
       "source": "/(.*)", 
       "destination": "/index.html"
     }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/recursos", "dest": "/" },
+    { "src": "/cookies", "dest": "/" },
+    { "src": "/aviso-legal", "dest": "/" },
+    { "src": "/politica-privacidad", "dest": "/" },
+    { "src": "/article/(.*)", "dest": "/" }
   ]
 }
