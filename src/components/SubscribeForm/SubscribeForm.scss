@@ -30,6 +30,10 @@
   &__Terms {
     span {
       font-size: 14px;
+      a {
+        position: relative;
+        z-index: 9;
+      }
     }
   }
 }
